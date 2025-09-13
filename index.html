@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Історія Ліцею "Інтелект"</title>
+  <style>
+    /* === Базові стилі === */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    .photo-frame {
+      border: 4px solid #555;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .photo-frame img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    /* === Теми === */
+    .light {
+      background: #f9f9f9;
+      color: #222;
+    }
+
+    .dark {
+      background: #1c1c1c;
+      color: #f0f0f0;
+    }
+
+    .blue {
+      background: #eaf4ff;
+      color: #002b5c;
+    }
+
+    /* Кнопки перемикача */
+    .theme-switcher {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .theme-switcher button {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .theme-switcher button:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body class="light">
+  <header>
+    <h1>Ліцей "Інтелект"</h1>
+    <p>Історія та традиції нашого ліцею</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Загальна інформація</h2>
+      <p>
+        Ліцей «Інтелект» — це сучасний освітній заклад, який поєднує багаторічні традиції 
+        та інноваційні підходи до навчання. Тут створюються умови для розвитку 
+        особистості, творчості та наукових досягнень учнів.
+      </p>
+    </section>
+
+    <section>
+      <h2>Фотогалерея</h2>
+      <div class="photo-frame">
+        <p><b>Фото 1:</b> Наш ліцей</p>
+        <img src="https://via.placeholder.com/600x400" alt="Фото ліцею">
+      </div>
+
+      <div class="photo-frame">
+        <p><b>Фото 2:</b> Події та учні</p>
+        <img src="https://via.placeholder.com/600x400" alt="Фото учнів">
+      </div>
+    </section>
+
+    <section class="theme-switcher">
+      <h2>Перемикач тем</h2>
+      <button onclick="setTheme('light')" style="background:#ddd;">Світла</button>
+      <button onclick="setTheme('dark')" style="background:#333; color:white;">Темна</button>
+      <button onclick="setTheme('blue')" style="background:#3fa9f5; color:white;">Синя</button>
+    </section>
+  </main>
+
+  <script>
+    function setTheme(theme) {
+      document.body.className = theme;
+    }
+  </script>
+</body>
+</html>
