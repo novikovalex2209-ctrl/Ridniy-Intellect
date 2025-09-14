@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Ridniy Intellect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    /* FIX: Запрещаем горизонтальную прокрутку для всей страницы */
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Бокове меню (адаптивне) -->
+  <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-b from-blue-700 to-purple-800 text-white flex flex-col items-center py-10 shadow-lg z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
+    <h1 class="text-3xl font-bold mb-12">Ridniy<br>Intellect</h1>
+    <nav class="flex flex-col space-y-6 text-lg">
+      <a href="#home" class="hover:text-yellow-300" onclick="toggleMenu()">🏠 Головна</a>
+      <a href="#about" class="hover:text-yellow-300" onclick="toggleMenu()">ℹ️ Про нас</a>
+      <a href="#services" class="hover:text-yellow-300" onclick="toggleMenu()">⚡ Можливості</a>
+      <a href="#committees" class="hover:text-yellow-300" onclick="toggleMenu()">🏛️ Комітети</a>
+      <a href="#gallery" class="hover:text-yellow-300" onclick="toggleMenu()">🖼️ Галерея</a>
+      <a href="#contact" class="hover:text-yellow-300" onclick="toggleMenu()">✉️ Контакти</a>
+    </nav>
+    <div class="mt-auto text-sm opacity-70">© 2025</div>
+  </aside>
+
+  <!-- Оверлей для мобільного меню -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden" onclick="toggleMenu()"></div>
+
+  <!-- Контент -->
+  <main class="lg:ml-64 transition-all duration-300 ease-in-out">
+
+    <!-- Кнопка бургер-меню -->
+    <button id="menu-btn" class="lg:hidden fixed top-4 left-4 z-50 p-2 bg-gray-800 text-white rounded-md" onclick="toggleMenu()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+
+    <!-- Hero -->
+    <section id="home" class="h-screen flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white" data-aos="fade-up">
+      <div class="text-center px-6">
+        <h2 class="text-5xl md:text-6xl font-extrabold mb-6">Ласкаво просимо!</h2>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">Ridniy Intellect — місце, де знання стають ближчими.
+        Розвивайся, дізнавайся нове та будь частиною сучасної спільноти.</p>
+        <a href="#about" class="bg-yellow-400 text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-yellow-300 transition">Дізнатися більше</a>
+      </div>
+    </section>
+
+    <!-- Про нас -->
+    <section id="about" class="min-h-screen flex items-center justify-center p-8 md:p-16 bg-white" data-aos="fade-right">
+      <div class="max-w-4xl text-center">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-blue-700">Про нас</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Ми створили платформу для навчання, розвитку та інтелектуального зростання.
+          Тут можна знайти сучасні матеріали, цікаві проекти та корисні інструменти.
+          Ridniy Intellect об’єднує тих, хто хоче навчатися і розвивати Україну.
+        </p>
+      </div>
+    </section>
+
+    <!-- Можливості -->
+    <section id="services" class="min-h-screen bg-gray-100 flex items-center p-8 md:p-16" data-aos="zoom-in">
+      <div class="container mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-700">Наші можливості</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+          <div class="p-8 bg-white rounded-2xl shadow-xl text-center hover:scale-105 transition">
+            <h3 class="text-2xl font-semibold mb-4">📚 Освіта</h3>
+            <p>Доступ до сучасних знань, курсів та практичних матеріалів.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl shadow-xl text-center hover:scale-105 transition">
+            <h3 class="text-2xl font-semibold mb-4">💡 Ідеї</h3>
+            <p>Платформа для обміну ідеями та створення нових рішень.</p>
+          </div>
+          <div class="p-8 bg-white rounded-2xl shadow-xl text-center hover:scale-105 transition">
+            <h3 class="text-2xl font-semibold mb-4">🌍 Спільнота</h3>
+            <p>Єдність людей, що прагнуть змін та розвитку разом.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Секція Комітетів -->
+    <section id="committees" class="min-h-screen p-8 md:p-16 bg-gray-100" data-aos="fade-up">
+      <div class="container mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-blue-700">Комітети Ліцейної Ради</h2>
+        <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto mb-12">
+          Рада Ліцею складається з 7 комітетів, кожен з яких відповідає за свій сектор діяльності. Всі комітети очолюються головами, зазвичай учнями 10-11 класів.
+        </p>
+
+        <!-- Сітка з комітетами -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Картка КМК -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Культурно-масовий (КМК)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> організацію культурно-масових заходів, дозвілля, ведення тематичних гуртків.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити цікаве дозвілля, технічну допомогу в проведенні заходів та функціонування гуртків.</p>
+          </div>
+
+          <!-- Картка НК -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Навчальний (НК)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> навчання і освіту, організацію інтелектуальних заходів, вікторин, олімпіад.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити функціонування гуртків, допомагати з навчанням та олімпіадами, ділитись досвідом.</p>
+          </div>
+
+          <!-- Картка СК -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Спортивний (СК)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> спортивні заходи і фізичне здоров'я, організовує спортивні змагання.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити, щоб учні ліцею мали можливість змагатись між собою в фізичному плані.</p>
+          </div>
+
+          <!-- Картка ДК -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Дисциплінарний (ДК)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> дисципліну та виховний процес. Веде "чорний список" порушників.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Дотримання учнями дисципліни, ведення "чорного списку", боротьба з електронними сигаретами.</p>
+          </div>
+
+          <!-- Картка ІК -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Інформаційний (ІК)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> роботу з інформацією. Веде телеграм-канал "Рідні стіни" та соцмережі.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити функціонування соцмереж та дошки оголошень, щоб всі були в курсі подій.</p>
+          </div>
+
+          <!-- Картка КЗПД -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Захисту прав дітей (КЗПД)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> комфортне перебування учнів в ліцеї, дотримання їхніх прав та аналіз проблем.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити учням всебічну допомогу та функціонування "безпечного простору" в кабінеті 408.</p>
+          </div>
+
+          <!-- Картка Шеф -->
+          <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 md:col-span-2 lg:col-span-1">
+            <h3 class="text-2xl font-bold text-purple-700 mb-3">Роботи з молодшими класами (Шеф)</h3>
+            <p class="text-gray-700 mb-4"><strong>Відповідає за:</strong> організацію роботи з молодшими класами (5-7) та їх дозвілля.</p>
+            <p class="text-gray-700"><strong>Обов'язок:</strong> Забезпечити залучення молодших учнів до ліцейного життя.</p>
+          </div>
+        </div>
+
+        <!-- Секція про гуртки -->
+        <div class="mt-16 pt-8 border-t-2 border-gray-200">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 text-blue-700">Гуртки</h2>
+            <p class="text-center text-lg text-gray-600 max-w-3xl mx-auto">
+                Наразі в ліцеї функціонує Математичний клуб. Також, за наявності зацікавлених учнів, можуть бути організовані наступні гуртки: шахоматний, дебатний (спік-клуб), театральний/музичний, журналістики, читацький, історичний та спортивний.
+            </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Галерея -->
+    <section id="gallery" class="min-h-screen p-8 md:p-16 bg-white" data-aos="fade-left">
+      <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-blue-700">Галерея</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <img src="https://placehold.co/500x300" class="w-full rounded-2xl shadow-lg hover:scale-105 transition" alt="Demo 1">
+        <img src="https://placehold.co/500x300" class="w-full rounded-2xl shadow-lg hover:scale-105 transition" alt="Demo 2">
+        <img src="https://placehold.co/500x300" class="w-full rounded-2xl shadow-lg hover:scale-105 transition" alt="Demo 3">
+      </div>
+    </section>
+
+    <!-- Контакти -->
+    <section id="contact" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-700 to-blue-800 text-white p-8 md:p-16" data-aos="flip-up">
+      <div class="text-center max-w-lg w-full">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">Контакти</h2>
+        <p class="mb-6 text-lg">Напишіть нам: <span class="font-semibold">info@ridniy.com</span></p>
+        <form class="space-y-4">
+          <input type="text" placeholder="Ваше ім’я" class="w-full p-4 rounded-lg text-black">
+          <input type="email" placeholder="Ваш email" class="w-full p-4 rounded-lg text-black">
+          <textarea placeholder="Ваше повідомлення" class="w-full p-4 rounded-lg text-black"></textarea>
+          <button class="bg-yellow-400 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition">Відправити</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-6 text-center">
+      <p>© 2025 Ridniy Intellect. Усі права захищені.</p>
+    </footer>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Ініціалізація AOS
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Логіка для мобільного меню
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('-translate-x-full');
+      overlay.classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>
