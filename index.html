@@ -48,7 +48,59 @@
     }
   </style>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<!-- Секція Рада ліцею -->
+<section id="rada-liceu" class="hidden p-6 rounded-xl shadow-xl bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white">
+  <h2 class="text-3xl font-bold mb-6 text-center animate__animated animate__fadeInDown">
+    🎓 Рада ліцею
+  </h2>
+
+  <!-- Навігація підрозділів -->
+  <div class="flex flex-wrap justify-center gap-3 mb-8">
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="ogoloshennya">📢 Оголошення</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="navchalnyi">📘 Навчальний комітет</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="kultura">🎭 Культурно-масовий</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="kreatyvnyi">✨ Креативний</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="inform">💻 Інформаційний</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="finans">💰 Фінансовий</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="disciplin">⚖️ Дисциплінарний</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="sport">⚽ Спортивний</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="prava">🛡️ Захист прав дитини</button>
+    <button class="tab-btn bg-white text-red-600 px-4 py-2 rounded-xl font-semibold hover:scale-105 transition" data-tab="molodshi">👶 Робота з молодшими школярами</button>
+  </div>
+
+  <!-- Контент підрозділів -->
+  <div id="tab-content" class="p-4 bg-white text-black rounded-lg shadow-md animate__animated animate__fadeIn">
+    <p class="text-center">Оберіть підрозділ ради ліцею 👆</p>
+  </div>
+</section>
+
+<script>
+  // Логіка вкладок Ради ліцею
+  const tabBtns = document.querySelectorAll('.tab-btn');
+  const tabContent = document.getElementById('tab-content');
+
+  const contentMap = {
+    ogoloshennya: "📢 Тут будуть свіжі оголошення Ради ліцею.",
+    navchalnyi: "📘 Навчальний комітет відповідає за освітні ініціативи.",
+    kultura: "🎭 Культурно-масовий комітет організовує свята та події.",
+    kreatyvnyi: "✨ Креативний комітет створює нові ідеї та проєкти.",
+    inform: "💻 Інформаційний комітет відповідає за сайт та медіа.",
+    finans: "💰 Фінансовий комітет веде облік та ресурси.",
+    disciplin: "⚖️ Дисциплінарний комітет стежить за порядком.",
+    sport: "⚽ Спортивний комітет проводить турніри та тренування.",
+    prava: "🛡️ Комітет захисту прав дитини допомагає учням у складних ситуаціях.",
+    molodshi: "👶 Комітет по роботі з молодшими школярами підтримує малюків у навчанні."
+  };
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tab = btn.getAttribute('data-tab');
+      tabContent.innerHTML = `<p class="animate__animated animate__fadeIn">${contentMap[tab]}</p>`;
+    });
+  });
+</script>
+
+  <body class="bg-gray-100 text-gray-900">
 
   <!-- Бокове меню -->
   <aside id="sidebar" class="fixed left-0 top-0 h-screen w-64 bg-gradient-to-b from-blue-700 to-purple-800 text-white flex flex-col items-center py-10 shadow-lg z-50 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out">
@@ -230,5 +282,6 @@
     <!-- Контакти -->
     <section id="contact" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-700 to-blue-800 text-white p-8 md:p-16" data-aos="flip-up">
       <div class="text-center max-w-l
+
 
 
